@@ -1,20 +1,6 @@
 % Note: this package requires mathtools
 \ProvidesPackage{ataomath}
 
-% KL Divergence (based on egreg's post at https://tex.stackexchange.com/questions/151984/double-vertical-bar-notation)
-\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
-  #1\;\delimsize\|\;#2%
-}
-\newcommand{\kl}{D\infdivx}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-% Example usage:
-% \kl{P}{Q} \\
-% % fixed size delimiters
-% \kl[\bigg]{\frac{\norm{P}}{2}}{Q} \\
-% % extensible delimiters
-% \kl*{\frac{\norm{P}}{2}}{Q}
-
-
 % optimization
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -33,5 +19,21 @@
 
 
 % general math
-\newcommand{\N}{\mathcal{N}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathcal{N}}    % for normal distributions
+\newcommand{\L}{\mathcal{L}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% KL Divergence (based on egreg's post at https://tex.stackexchange.com/questions/151984/double-vertical-bar-notation)
+% Example usage:
+% \kl{P}{Q} \\
+% % fixed size delimiters
+% \kl[\bigg]{\frac{\norm{P}}{2}}{Q} \\
+% % extensible delimiters
+% \kl*{\frac{\norm{P}}{2}}{Q}
+\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
+  #1\;\delimsize\|\;#2%
+}
+\newcommand{\kl}{D\infdivx}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
