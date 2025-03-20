@@ -1,0 +1,37 @@
+% Note: this package requires mathtools
+\ProvidesPackage{ataomath}
+
+% KL Divergence (based on egreg's post at https://tex.stackexchange.com/questions/151984/double-vertical-bar-notation)
+\DeclarePairedDelimiterX{\infdivx}[2]{(}{)}{%
+  #1\;\delimsize\|\;#2%
+}
+\newcommand{\kl}{D\infdivx}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+% Example usage:
+% \kl{P}{Q} \\
+% % fixed size delimiters
+% \kl[\bigg]{\frac{\norm{P}}{2}}{Q} \\
+% % extensible delimiters
+% \kl*{\frac{\norm{P}}{2}}{Q}
+
+
+% optimization
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\Epi}{\mathbf{epi}}
+
+
+% probability and statistics
+\newcommand{\indep}{\perp \!\!\! \perp}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\sumn}{\sum_{i = 1}^n}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\iid}{\overset{iid}{\sim}}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\mle}{\mathrm{MLE}}
+
+
+% general math
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\R}{\mathbb{R}}
